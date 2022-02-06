@@ -16,15 +16,25 @@ public:
     cout<<endl;
       return unique_nums.size();
     }
+
+     // using set , space O(n)
+    int removeDuplicatesExtraSpaceSet(vector<int>& nums) {
+      set<int> unique_nums(nums.begin(), nums.end());
+      for(auto num:unique_nums)
+        cout<<num<<" ";
+        cout<<endl;
+      return unique_nums.size();
+    }
 };
 int main(){
     Solution solution;
     vector<int> ar({1,1,2,3,3});
     int n = solution.removeDuplicatesExtraSpace(ar);
-    cout<<n<<endl;
+    cout<<"With extra space: "<<n<<endl;
     for(int i = 0; i< n; i++)
         cout<<ar[i]<<" ";
     cout<<endl;
-
+    n = solution.removeDuplicatesExtraSpaceSet(ar);
+    cout<<"Using set: "<<n<<endl;
     return 0;
 }
